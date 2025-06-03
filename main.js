@@ -36,16 +36,6 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//파일 업로드를 위한 multer 설정
-const upload = multer({
-  storage: multerGoogleStorage.storageEngine({
-    bucket: "yorizori_post_img",
-    projectId: "burnished-core-422015-g1",
-    keyFilename: "secure/burnished-core-422015-g1-f3b170868aa8.json",
-  }),
-  limits: { fileSize: 5 * 1024 * 1024 }, // 파일 크기 제한 (예: 5MB)
-});
-
 //프로필 이미지 업로드를 위한 multer 설정
 const path = require("path");
 
