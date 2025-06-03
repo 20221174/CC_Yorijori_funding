@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yorijori</title>
+    <link rel="stylesheet" href="/css/funding/joinFundingComplete.css">
+</head>
+<% let distributionPosition = '성신여자대학교 수정캠퍼스 학생회관 1층'%>
+<% let dateOfDistribution = '4월 25일 (목) 오전 11:30'%>
+<% let complete = "펀딩 참여 신청 완료!" %>
+<% let message = "참여 인원 도달 시 주문과 함께 배송이 시작됩니다. <br> 배부 위치와 일자를 다시 한 번 확인해주세요." %>
+
+<body>
+    <div id="container">
+
+    <div class="information-box">
+        <div class="complete">
+                <%= complete %>
+                <!-- 에러발생경우 추가해야할듯..컨트롤러에서 처리 -->
+        </div>
+        <div class="img-box">
+            <img src="/assets/image.png" class="img">
+        </div>
+        <div class="message">
+            <%- message %>
+        </div>
+        <div class="distribution">
+            <div>배부 위치: 
+                <span> <%= group.city%>
+                    <%= group.district%>
+                    <%= group.town%>
+                    <%= group.detail%>  </span>
+            </div>
+            <div>배부 일자 및 시간: 
+                <span> <%= group.distributionDate %> </span>
+            </div>
+        </div>
+        <a href="/joinfundingPage/fundingPage">
+            <span class="button">확인</span>
+        </a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/funding/createFundingResults.css">
+
+    <title>Yorijori Funding Product Searching</title>
+</head>
+<body>
+    <!-- 검색 바 가져오기 (action 태그 빼고~) -->
+    <div class="content">
+        <% if (Object.keys(results).length > 0) { %>
+            <% results.forEach(product => { %>
+                <div class="funding-box" onclick="showProductDetail('<%= product.fundingProductId %>')">
+                    <div class="information-box">
+                        <div class="img_box">
+                            <img class="img" src="<%= product.imageUrl %>" alt="Product Image"></img>
+                        </div>
+                        <div class="information-list">
+                            <div class="information">상품명: 
+                                <span class="info"> <%= product.productName %> </span>
+                            </div>
+                            <div class="information">상품 수량: 
+                                <span class="info"> <%= product.quantity %> </span>
+                            </div>
+                            <div class="information">판매자(기업):
+                                <span class="info"> <%= product.seller %> </span>
+                            </div>
+                            <div class="information">가격:
+                                <span class="info"> <%= product.unitPrice %> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <div class ="information-box">
+                <p>검색 결과가 없습니다.</p>
+            </div>
+        <% } %>
+    </div>
+    <script>
+        function showProductDetail(productId) {
+            window.location.href = `/createfundingPage/product_detail/${productId}`;
+        }
+    </script>
+</body>
+</html>
+

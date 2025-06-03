@@ -1,0 +1,189 @@
+header {
+    z-index: 1000;
+}
+
+a {
+    color: #000000;
+    text-decoration: none; /* 링크 밑줄 없애기 */
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+body {
+    color: #000000;
+}
+
+.funding-box {
+    /* position: relative; */
+    height: 500px;
+    width: 1000px;
+    /* background-color: beige; */
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+}
+
+#select {
+    height: 50px;
+    width: 350px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 90px;
+    /* background-color: #E3CAA5; */
+    /* text-align: center; */
+    position: absolute;
+    border-radius: 50px;
+    border: 4px solid #E3CAA5;
+}
+
+.h4{
+    margin-top: 8px;
+    margin-left: 25px;
+}
+
+.information-list {
+    display: flex; /* 플렉스 컨테이너로 설정 */
+    flex-wrap: wrap; /* 요소가 넘치면 다음 줄로 이동 */
+    justify-content: space-between; /* 요소 간 간격 균등 분배 */
+    gap: 20px; /* 요소 간 간격 설정 */
+    width: 1115px; /* 부모 컨테이너의 너비 */
+    margin: 0 auto; /* 가운데 정렬 */
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+/* information-box 스타일 */
+.information-box {
+    width: 547px; /* 부모 컨테이너의 절반 크기 */
+    height: 291px;
+    background-color: #FFFBE9;
+    border: 4px solid #6C6058; /*테두리 색상 변경*/
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+/* img 스타일 */
+.img {
+    height: 212px;
+    width: 226px; 
+    object-fit: cover; /* 이미지가 비율에 맞게 채워지도록 설정 */
+    border: 5px solid #6C6058;
+    border-radius: 20px;
+    margin-right: 15px;
+} 
+
+/* information 스타일 */
+.information {
+    font-size: 20px;
+    width: 600px;
+    font-weight: bold;
+}
+
+.info {
+    font-weight: lighter;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.join-box {
+    height: 100px;
+    width: 700px;
+    /* background-color: #12373A; */
+    margin: auto;
+    /* margin-top: 20px; */
+    display: flex;
+    border: 4px solid #AD8B73;
+}
+
+.join {
+    font-size: 20px;
+    /* background-color: aqua; */
+    margin-top: 25px;
+    margin-left: 60px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#join-btn {
+    height: 40px;
+    width: 300px;
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 32px;
+    background-color: #FFFBE9;
+    border-radius: 50px;
+    border: 3px solid #AD8B73;
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.num {
+    background-color: #E3CAA5
+}
+
+#place{
+    font-size: 15px;
+    background-color: #FFFBE9;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid #AD8B73;
+    margin-left: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer
+}
+.popup-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% 투명도 검은색 배경 */
+    z-index: 1000;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    height: 430px;
+    margin-top: -234.5px; /* 팝업 높이의 절반 */
+    margin-left: -365px; /* 팝업 너비의 절반 */
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.popup button {
+    margin-right: 10px;
+}
+#map{
+    margin: auto;
+    width: 600px;
+    height: 400px;
+}
+#popupButton{
+    font-size: 15px;
+    background-color: #CED7C5;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid black;
+    margin-left: 580px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    cursor: pointer
+}

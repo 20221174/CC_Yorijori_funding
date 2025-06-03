@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yorijori</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/funding/joinFunding.css">
+    
+</head>
+
+<body>
+    <div id="container">
+        <div>
+    <div class="funding-box">
+        <div id="select">
+            <h4 class="h4">
+                <span class="count">
+                    <%= group.productName%> <%= group.quantity%>개</span>를 선택했어요!
+            </h4>
+        </div>
+        <div class="information-box">
+            <div class="img-box">
+                <img src="<%= group.imageUrl %>" alt="productImage" class="img">
+              </div>
+            <div class="information-list">
+                <div class="information">펀딩 일자:
+                    <span class="info">
+                        <%= group.fundingDate%>
+                    </span>
+                </div>
+                <div class="information">품명:
+                    <span class="info">
+                        <%= group.productName%>
+                    </span>
+                </div>
+                <div class="information">상품 배송 예정 일자:
+                    <span class="info">
+                        <%= group.deliveryDate%>
+                    </span>
+                </div>
+                <div class="information">가격:
+                    <span class="info">
+                        <!-- 개수 수정필요.. -->
+                        <%= group.unitPrice%> / <%= group.unit%>개 
+                    </span>
+                </div>
+                <div class="information">대표자:
+                    <span class="info">
+                        <%= group.name%>
+                    </span>
+                </div>
+                <div class="information" id="distribution-box">배부 위치:
+                    <span class="info">
+                        <%= group.city%>
+                            <%= group.district%>
+                                <%= group.town%>
+                                    <%= group.detail%>
+                    </span>
+                        <button id="place" type="button" onclick="showPopup()">위치</button>
+                    
+                </div>
+                <div class="information">배부 일자 및 시간:
+                    <span class="info">
+                        <%= group.distributionDate%>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="join-box">
+        <div class="join">
+            상품을 공동 구매하기 위해서는 <br>
+            <!-- 참여시 참여인원 -1하는 기능 필요..참여확정시해야함 -->
+            앞으로 <span class="num">
+                <%= people %>명</span>이 더 필요해요!
+        </div>
+        <a href="<%=`/joinfundingPage/joinFunding/${group.fundingGroupId}/join`%>">
+            <div class="button" id="join-btn">이 펀딩 참여하기</div>
+        </a>
+    </div>
+
+    <!-- 팝업 배경 -->
+    <div class="popup-bg" id="popup-bg" onclick="closePopup()"></div>
+
+    <!-- 팝업 내용 -->
+    <div class="popup" id="popup">
+        <div id="map"></div>
+            <button type="button" onclick="closePopup()" id="popupButton">닫기</button>
+    </div>
+<!-- 카카오 지도 API -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dc9589943a0e0e8e5195fc4385506416&libraries=services"></script>
+    <script>
+        let juso = "<%= juso %>";
+    let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+        mapOption = {
+            center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+            level: 3 // 지도의 확대 레벨
+        };  
+    
+    // 지도를 생성합니다    
+    let map = new kakao.maps.Map(mapContainer, mapOption); 
+    
+    // 주소-좌표 변환 객체를 생성합니다
+    let geocoder = new kakao.maps.services.Geocoder();
+    
+    // 주소로 좌표를 검색합니다 
+    geocoder.addressSearch(juso, function(result, status) {
+        // 정상적으로 검색이 완료됐으면 
+         if (status === kakao.maps.services.Status.OK) {
+    
+            let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+    
+            // 결과값으로 받은 위치를 마커로 표시합니다
+            let marker = new kakao.maps.Marker({
+                map: map,
+                position: coords
+            });
+    
+            // 인포윈도우로 장소에 대한 설명을 표시합니다
+            let infowindow = new kakao.maps.InfoWindow({
+                content: '<div style="width:100px;text-align:center;padding-left:25px;">배부 위치</div>'
+            });
+            infowindow.open(map, marker);
+            
+
+        } 
+    });    
+    </script>
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            document.getElementById('popup-bg').style.display = 'block';
+            setTimeout(function () {
+                map.relayout();// 윈도우가 리사이즈될 때 지도의 크기를 조정합니다
+                map.setCenter(coords); // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+            }, 0);
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+            document.getElementById('popup-bg').style.display = 'none';
+        }
+    </script>
+    </div>
+</div>
+</body>
+
+</html>

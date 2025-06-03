@@ -1,0 +1,97 @@
+header {
+    z-index: 1000;
+}
+
+body {
+    color: #12373A;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.funding-box {
+    height: 500px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+#select {
+    height: 50px;
+    font-size: 25px;
+    margin-top: 10px;
+    margin-left: 90px;
+    position: absolute;
+}
+
+.information-box {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 50px auto 0 auto;
+}
+
+.information-list {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin: 65px auto 0 20px; 
+}
+
+.information {
+    font-size: 22px;
+    height: 35px;
+    width: auto;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.info {
+    background-color: rgba(227, 202, 165, 0.6);
+    font-weight: lighter;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.img {
+    height: 352px;
+    width: 352px;
+    border-color: #6C6058;
+    border-width: 4px;
+    border-style: solid; 
+    border-radius: 20px;
+    margin-right: 50px;
+}
+
+.funding-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; 
+}
+
+.funding-button {
+    background-color: #FFFBE9;
+    color: #000000;
+    border: 2.5px solid #6C6058;
+    border-radius: 90px;
+    padding: 10px 30px; 
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.funding-button:hover {
+    background-color: #6C6058;
+    color: #FFFBE9;
+}

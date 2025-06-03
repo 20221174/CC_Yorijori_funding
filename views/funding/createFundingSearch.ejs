@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/funding/create_funding.css">
+
+    <title>Yorijori Create Funding page</title>
+</head>
+<body>
+    <div id="createFundingSearchBar" class="createFundingSearchBar">
+        <div class="search_box">
+        <label for="searchInput" class="searchLabel">품명 검색:</label>
+        <form class="searchBar" action="/createfundingPage/search_results" method="get">
+            <input id="searchInput" class="funding-search-txt" type="text" name="query" placeholder="EX) 사과">
+            <button class="funding-search-btn" type="submit"> 
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </form>
+    </div>
+    </div>
+ 
+
+    <script>
+        function redirectToCreateClicked() {
+            window.location.href = "/create_funding/search_results";
+        }
+    </script>
+</body>
+</html>

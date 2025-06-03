@@ -1,0 +1,172 @@
+header {
+    z-index: 1000;
+}
+
+a {
+    color: #000000;
+    text-decoration: none; /* 링크 밑줄 없애기 */
+}
+
+body {
+    color: #000000;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.funding-box {
+    /* position: relative; */
+    height: 500px;
+    width: 1000px;
+    /* background-color: beige; */
+    margin: auto;
+    /* padding-top: 10px; */
+    margin-top: 90px;
+    display: flex;
+}
+
+.select {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-left: 200px;
+    height: 50px;
+    width: 380px;
+    /* margin-top: 10px; */
+    /* margin-left: 90px; */
+    /* background-color: aquamarine; */
+    position: absolute;
+    font-weight: bold;
+    border: 4px solid #E3CAA5;
+    border-radius: 50px;
+}
+
+.information-box {
+    position: absolute;
+    /* background-color: bisque; */
+    margin-left: 200px;
+    margin-top: 150px;
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    font-size: 20px;
+}
+
+.information-box2 {
+    position: absolute;
+    /* background-color: bisque; */
+    margin-left: 200px;
+    margin-top: 320px;
+    justify-content: center;
+    /* 수평 가운데 정렬 */
+    align-items: center;
+    font-size: 20px;
+
+}
+
+
+.information {
+    height: 30px;
+    width: 500px;
+    /* background-color: blueviolet; */
+    margin-bottom: 10px;
+    /* font-size: 20px; */
+    font-weight: bold;
+
+}
+
+.h4{
+    margin-top: 8px;
+    margin-left: 25px;
+}
+
+.info {
+    background-color: #E3CAA5;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-weight: lighter;
+}
+
+
+.button {
+    height: 30px;
+    width: 100px;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    background-color: #FFFBE9;
+    border: 2px solid #AD8B73;
+    margin-left: 750px;
+    margin-top: 500px;
+    border-radius: 50px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+/* .item {
+    background-color: #E3CAA5;
+} */
+
+
+#place{
+    font-size: 15px;
+    background-color: #FFFBE9;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid #AD8B73;
+    margin-left: 7px;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer
+}
+
+.popup-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* 40% 투명도 검은색 배경 */
+    z-index: 1000;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 650px;
+    height: 430px;
+    margin-top: -234.5px; /* 팝업 높이의 절반 */
+    margin-left: -365px; /* 팝업 너비의 절반 */
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 1001;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+
+.popup button {
+    margin-right: 10px;
+}
+#map{
+    margin: auto;
+    width: 600px;
+    height: 400px;
+}
+#popupButton{
+    font-size: 15px;
+    background-color: #CED7C5;
+    border-radius: 50px;
+    text-align: center;
+    border: 2px solid black;
+    margin-left: 580px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-top: 5px;
+    cursor: pointer
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yorijori</title>
+    <link rel="stylesheet" href="/css/funding/funding_create_success.css">
+</head>
+<body>
+    <div id="container">
+        <div class="information-box">
+            <div class="complete">
+                펀딩 생성 완료!
+            </div>
+            <div class="img-box">
+                <img src="/assets/image.png" class="img">
+            </div>
+            <div class="message">
+                <p>참여 인원 도달 시 알림을 보내드려요! <br>
+                    펀딩 성공까지 필요한 인원 : <span class="highlight">n명</span> <br>
+                    배부 위치와 일자를 다시 한 번 확인해주세요. </p>          
+            </div>
+            <div class="distribution">
+                <br>
+                <div>배부 위치: 
+                    <span><%= fundingGroup.city + ' ' + fundingGroup.district + ' ' + fundingGroup.town + ' ' + fundingGroup.detail %></span>
+                </div>
+                <div>배부 일자 및 시간: 
+                    <span><%= fundingGroup.distributionDateFormatted %></span>
+                </div>
+            </div>
+            <a href="/">
+                <span class="button">확인</span>       
+            </a>
+        </div>
+    </div>
+</body>
+</html>

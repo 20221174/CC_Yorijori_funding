@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><% 'Welcome to YORIJORI!' %></title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/layout.css" />
+    <script
+      src="https://kit.fontawesome.com/9dd3bbb56c.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <div id="logo"><a href="/">ta_test 요리조리</a></div>
+      <!-- 레시피 및 재료 검색 -->
+      <div id="searchBar">
+        <form class="searchBar" action="/search" method="get">
+          <input
+            class="search-txt"
+            type="text"
+            name="material"
+            placeholder="레시피, 재료 검색"
+            value="<%= typeof searchQuery !== 'undefined' ? searchQuery : '' %>"
+          />
+          <button class="search-btn" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </div>
+      <!-- 로그인한 후 -->
+      <% if (loggedIn) { %>
+      <div id="after-login">
+        <div id="mypage">
+          <a href="/auth/mypage"><i class="fa-solid fa-circle-user"></i></a>
+        </div>
+        <a href="<%= domainName %>/write"
+          ><div id="write-post"><p>글쓰기</p></div></a
+        >
+      </div>
+      <%} else {%>
+      <!-- 로그인하기 전 회원가입, 로그인 버튼 -->
+      <div id="before-login">
+        <div id="signUp"><a href="/auth/newuser">회원가입</a></div>
+        <div>&nbsp;|&nbsp;</div>
+        <div id="signIn"><a href="/auth/login">로그인</a></div>
+      </div>
+      <%} %>
+    </header>
+
+    <div class="flashes">
+      <% if(flashMessages) { %> <% if (flashMessages.success) { %>
+      <div class="flash success"><%= flashMessages.success %></div>
+      <% } else if (flashMessages.error) { %>
+      <div class="flash error"><%= flashMessages.error %></div>
+      <% } %> <% } %>
+    </div>
+
+    <% if (showCategoryBar) { %> <%- include('recipe/categoryBar.ejs') %> <% }
+    %>
+
+    <section>
+      <%- body %>
+      <!-- 이곳에서 개별 페이지의 내용이 렌더링됩니다. -->
+    </section>
+
+    <footer><p>© 2024 YORIJORI</p></footer>
+  </body>
+</html>

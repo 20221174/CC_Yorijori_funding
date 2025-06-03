@@ -1,0 +1,233 @@
+#container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+#searchResult {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1090px;
+    margin-top: 50px;
+}
+
+#no-result {
+    height: 470px;
+    width: 750px;
+    background-color: #D9E2D1;
+    margin: auto;
+    margin-top: 90px;
+    border-radius: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img-box {
+    background-color: #D5B894;
+    height: 200px;
+    width: 200px;
+    border-radius: 100%;
+    text-align: center;
+}
+
+.no-result-img {
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+}
+
+.no-result-comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 30px 0 0 0;
+}
+
+.comment1, .comment2 {
+    margin: 10px 0 0 0;
+}
+
+.title {
+    font-size: 25px;
+}
+
+#title {
+    color: #C5A88D;
+    font-size: 28px;
+}
+
+hr {
+    margin: 10px 0 10px 0;
+}
+
+#hr-top {
+    border: solid 2px rgba(65, 101, 88, 0.5);
+    width: 1090px;
+}
+
+#hr-bottom {
+    border: solid 1px rgba(65, 101, 88, 0.5);
+    width: 1090px;
+}
+
+#ver {
+    background-color: #707070;
+    height: 16px;
+    width: 1px;
+}
+
+.sort-by {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    float: left;
+    padding-right: 700px;
+    width: 350px;
+}
+
+.sort-by > div,
+.sort-by > a {
+    margin-right: 10px;
+}
+
+.sort-method {
+    font-weight: 200;
+    color: #707070;
+}
+
+.click {
+    color: black;
+    font-weight: bolder;
+}
+
+.list-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 20px 0;
+    width: 1090px;
+    gap: 20px;
+    place-items: center;
+}
+
+.recipe-card {
+    position: relative;
+    color: #fff;
+    background-color: rgba(185, 185, 185, 0.219);
+    box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.096);
+    border-radius: 10px;
+    padding: 15px;
+    overflow: hidden;
+    height: 310px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-image {
+    width: 300px;
+    height: 230px;
+    border-radius: 10px;
+}
+
+.recipe-card h2, .recipe-card p {
+    margin: 0;
+    margin-top: 10px;
+    color: #303030;
+    width: 250px;
+}
+
+.btn-position {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookmark-button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.bookmark-saved {
+    background-image: url('/assets/bookmark2.png');
+    width: 24px;
+    height: 24px;
+}
+
+.bookmark-not-saved {
+    background-image: url('/assets/bookmark1.png');
+}
+
+.pagination {
+    margin: 100px 0 50px 0;
+}
+
+.pagination a {
+    color: #808080;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    transition: color 0.3s;
+}
+
+.pagination a.active {
+    color: black;
+    font-weight: bold;
+}
+
+#side-bar {
+    width: 200px;
+    min-height: calc(100vh - 150px);
+}
+
+.goto-funding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 750px;
+    padding-bottom: 30px;
+}
+
+.funding-icon {
+    width: 150px;
+}
+
+.funding-txt {
+    margin: 0;
+    text-align: center;
+}
+
+a {
+    color: black;
+}
+
+.view-posts-container {
+    margin-bottom: 40px;
+}
+
+.recommend-posts-container {
+    margin-top: 20px;
+}
+
+.posts-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1090px;
+}
+
+.posts-section h1 {
+    width: 1090px;
+    text-align: left;
+    margin-bottom: 20px;
+}

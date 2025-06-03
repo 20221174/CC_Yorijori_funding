@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yorijori</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/funding/fundingSearch.css">
+</head>
+
+<body>
+  <div id="container">
+
+  <div class="main">
+    <div class="search-container">
+      <div class="search">물품 검색: </div>
+      <form class="search-form" action="/joinfundingPage/fundingSearch" method="get">
+        <input type="text" name="query" placeholder="펀딩 검색" class="search-input">
+        <button type="submit" class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+    <div> 
+      <!-- DB에 목록이 있을 때 -->
+      <% if (Object.keys(results).length > 0) { %> 
+        
+      <div class="fundingRegion">
+        지금 <%= results[0].district %>에서 열린 공동 펀딩은..
+      </div>
+      <div class="funding-container">
+        <% results.forEach(result=> { %>
+          <div class="funding-card">
+            <!-- 목록마다 링크 다르게해야함. 그룹아이디로 구별하기. -->
+            <a href="<%=`/joinfundingPage/joinFunding/${result.fundingGroupId}` %>" class="funding-list">
+              <div class="img-box">
+                <img src="<%= result.imageUrl %>" alt="productImage" class="img">
+              </div>
+              <div class="information-box">
+                <p class="information">품명: <%= result.productName %> <%=result.quantity%>개
+                </p>
+                <p class="information">펀딩 대표자: <%= result.name %>
+                </p>
+                <p class="information">단위 당 가격: <%= result.unit%>개 / <%= result.unitPrice %>원
+                </p>
+            </a>
+          </div>
+      </div>
+      <% }) %>
+      <!-- 키워드와 관련된 목록이 없을 때 -->
+      <%} else{%>
+        <div class="noItems">
+          "<%= query %>"와 관련된 펀딩이 없습니다.
+        </div>
+        <%}%>
+  </div>
+  <div class="OpenFuding-box">
+    <div class="in">
+      내가 필요한 물품에 대한 펀딩이 없다면?
+    </div>
+    <!-- 펀딩생성하는 페이지로 이동하도록 수정필요 -->
+    <a href="/createfundingPage/create_funding_search" class="open"> 
+      <div class="funding-btn">펀딩 열기
+      </div>
+    </a>
+  </div>
+</div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+header {
+    z-index: 1000;
+}
+
+body {
+    color: #12373A;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.funding-box {
+    height: 500px;
+    width: 1000px;
+    margin: auto;
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.information-box {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+    margin: 50px auto 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.information {
+    font-size: 22px;
+    margin-bottom: 20px; 
+    font-weight: bold;
+}
+
+.info {
+    background-color: #CED7C5;
+    font-weight: lighter;
+    height: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.img {
+    height: 460px;
+    width: 460px;
+    background-color: transparent;
+    display: block;
+    margin: 20px auto;
+}
+
+.img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.funding-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.funding-button {
+    background-color: #ADBC9F;
+    color: #12372A;
+    border: 2.5px solid #12372A;
+    margin-top: 70px;
+    border-radius: 90px;
+    padding: 10px 40px; 
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.funding-button:hover {
+    background-color: #12372A;
+    color: #ADBC9F;
+}

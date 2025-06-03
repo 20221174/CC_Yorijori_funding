@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Funding</title>
+    <link rel="stylesheet" href="/css/funding/create_real_funding.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title_info_box">
+            <h1><%= product.seller %>의 <%= product.productName %>을 펀딩하고 있어요!</h1>
+        </div>
+        <div class="information-box">
+            <div class="img_box">
+                <img class="img" src="<%= product.imageUrl %>" alt="Product Image"></img>
+            </div>
+            <form action="<%= `/createfundingPage/create_funding/${productId}` %>" method="POST">
+                <div class="information">          
+                    <label for="fundingDate">펀딩 일자:</label>
+                    <span class="info"><%= new Date().toISOString().split('T')[0] %></span>
+                </div>
+                <div class="information">
+                    <label for="people">참여 인원:</label>
+                    <input class="info" type="number" id="people" name="people" min="1" required>
+                </div>
+                <div class="information">
+                    <label for="deliveryDate">상품 배송 예정 일자:</label>
+                    <input class="info" type="date" id="deliveryDate" name="deliveryDate" required>
+                </div>
+                <div class="information">
+                    <label for="unitPrice">가격:</label>
+                    <span class="info"><%= product.unitPrice %> 원 / <%= product.unit %></span>
+                </div>
+                <div class="information">
+                    <label for="representative">대표자:</label>
+                    <span class="info"><%= representative.name %></span>
+                </div>
+                <div class="information">
+                    <label for="representativePhone">대표자 전화번호:</label>
+                    <span class="info"><%= representative.phoneNumber %></span>
+                </div>
+                <div class="information">
+                    <label for="representativeAddress">대표자 주소:</label>
+                    <span class="info"><%= representative.city + ' ' + representative.district + ' ' + representative.town + ' ' + representative.detail %></span>
+                </div>
+                <div class="information">
+                    <label for="distributionLocation">배부 위치:</label>
+                    <input class="info" type="text" id="distributionLocation" name="distributionLocation" required>
+                </div>
+                <div class="information">
+                    <label for="distributionDate">배부 일자 및 시간:</label>
+                    <input class="info" type="datetime-local" id="distributionDate" name="distributionDate" required>
+                </div>
+                <div class="funding-button-container">
+                    <button class="funding-button" type="submit">펀딩 생성</button>        
+                </div>
+            </form>         
+        </div>  
+    </div>
+</body>
+</html>
+

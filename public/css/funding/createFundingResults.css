@@ -1,0 +1,72 @@
+header {
+    z-index: 1000;
+}
+
+a {
+    color: #12373A;
+    text-decoration: none; /* 링크 밑줄 없애기 */
+}
+
+#container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+body {
+    color: #12373A;
+    font-family: 'ABeeZee', sans-serif;
+}
+
+.funding-box {
+    height: 400px;
+    width: 1000px;
+    margin: auto;
+    display: flex;
+}
+
+.information-box {
+    position: absolute;
+    display: flex;
+    margin-left: 90px;
+    margin-top: 50px;
+}
+
+.img-box {
+    height: 270px;
+    width: 270px;
+    /* background-color: aqua; */
+    border: 4px solid #12372A;
+    display: grid;
+    place-items: center;
+}
+
+.img {
+    height: 270px;
+    width: 270px;
+    background-color: transparent;
+}
+
+.img img {
+    height: 100%; 
+    width: 100%;
+    object-fit: cover; /* 부모 요소의 영역에 이미지가 꽉 차도록 크기를 조정 */
+}
+
+.information {
+    font-size: 20px;
+    height: 35px;
+    width: 600px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    font-weight: bold;
+
+}
+
+.info {
+    background-color: #CED7C5;
+    font-weight: lighter;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
