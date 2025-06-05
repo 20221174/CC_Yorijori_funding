@@ -36,9 +36,6 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//프로필 이미지 업로드를 위한 multer 설정
-const path = require("path");
-
 // 뷰 엔진 설정
 app.set("view engine", "ejs");
 app.use(layouts);
