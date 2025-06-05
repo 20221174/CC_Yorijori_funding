@@ -17,7 +17,7 @@ module.exports = {
   fundingList: async (req, res, next) => {
     try {
       //findAll()로 했더니 원하는 결과가 안나와서 raw 쿼리 사용함. 펀딩그룹을 기준으로 펀딩상품과 유저 테이블을 조인해서 정보가져옴.
-      let userId = res.locals.currentUser.userId;
+      const userId = req.user.userId;
 
       // 1. 요청자(userId)의 district 가져오기
       const userResponse = await axios.get(
