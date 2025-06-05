@@ -91,10 +91,12 @@ app.use((req, res, next) => {
 // Router
 const joinFundingRouter = require("./routers/joinFundingRouter.js");
 const createFundingRouter = require("./routers/createFundingRouter.js");
+const apiRouter = require("./routers/apiRouter.js");
 
 app.use("/createfundingPage", createFundingRouter);
 // joinFundingRouter 접근
 app.use("/joinfundingPage", joinFundingRouter);
+app.use("/funding-api", apiRouter);
 
 // Express 전역 변수를 설정하여 모든 EJS 템플릿에서 접근 가능하도록 함
 app.locals.domainName = process.env.DOMAIN_NAME;
